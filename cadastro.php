@@ -7,7 +7,7 @@
     <title>VideoTeca - Cadastro</title>
 
     <!--CSS-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
 
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -16,18 +16,18 @@
 <body>
     <!--MENU-->
     <?php
-        require_once('../src/template/menu.html');
+        require_once('src/template/menu.html');
     ?>
 
     <!--CONTEUDO-->
     <div class="container">
         <div class="row">
-            <div class="col-md">
-                <form action="" id="cadastro">
+            <div class="col-md-12">
+                <form action="" method="post" id="cadastro">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="titulo">Titulo:</label>
+                                <label for="titulo">Título:</label>
                                 <input type="text" name="titulo" id="titulo" class="form-control">
                             </div>
                         </div>
@@ -36,11 +36,43 @@
                                 <label for="genero">Gênero:</label>
                                 <select name="genero" id="genero" class="form-control">
                                     <option value="">Selecione um gênero</option>
-                                    <option value="acao">Ação</option>
                                 </select>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ano">Ano:</label>
+                                <input type="text" name="ano" id="ano" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="estudio">Estúdio:</label>
+                                <select name="estudio" id="estudio" class="form-control">
+                                    <option value="">Selecione um estúdio</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="pais">País:</label>
+                                <select name="pais" id="pais" class="form-control">
+                                    <option value="">Selecione um país</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="diretor">Diretor:</label>
+                                <input type="text" name="diretor" id="diretor" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Cadastrar" class="btn">
                 </form>
             </div>
         </div>

@@ -7,7 +7,7 @@
     <title>VideoTeca</title>
 
     <!--CSS-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
 
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,7 +15,7 @@
 <body>
     <!--MENU-->
     <?php
-        require_once('../src/template/menu.html');
+        require_once('src/template/menu.html');
     ?>
 
     <!--BOOTSTRAP JS-->
