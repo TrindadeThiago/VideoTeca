@@ -27,13 +27,21 @@
             <div class="col-md-12">
                 <form action="" method="post" id="cadastro">
                     <div class="title">
-                        <h3 class="espacamento">Cadastre um filme</h3>
+                        <h3 class="espacamento title-form">Cadastre um filme</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="titulo" class="espacamento">Título:</label>
+                                <input type="text" name="titulo" id="titulo" class="form-control">
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="espacamento" for="titulo">Título:</label>
-                                <input type="text" name="titulo" id="titulo" class="form-control">
+                                <label class="espacamento" for="titulo">Duração:</label>
+                                <input type="time" name="titulo" id="titulo" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -83,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Cadastrar" class="btn btn-custom">
+                    <button type="submit" name="btn" value="inserir" class="btn btn-custom">Cadastrar</button>
                 </form>
             </div>
         </div>
