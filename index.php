@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VideoTeca</title>
 
+    <link rel="shortcut icon" href="src/assets/icon/favicon.ico" type="image/x-icon">
+
     <!--CSS-->
     <link rel="stylesheet" href="public/css/style.css">
 

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VideoTeca - Cadastro</title>
 
+    <link rel="shortcut icon" href="src/assets/icon/favicon.ico" type="image/x-icon">
+
     <!--CSS-->
     <link rel="stylesheet" href="public/css/style.css">
 
@@ -24,16 +26,19 @@
         <div class="row">
             <div class="col-md-12">
                 <form action="" method="post" id="cadastro">
+                    <div class="title">
+                        <h3 class="espacamento">Cadastre um filme</h3>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="titulo">Título:</label>
+                                <label class="espacamento" for="titulo">Título:</label>
                                 <input type="text" name="titulo" id="titulo" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="genero">Gênero:</label>
+                                <label class="espacamento" for="genero">Gênero:</label>
                                 <select name="genero" id="genero" class="form-control">
                                     <option value="">Selecione um gênero</option>
                                 </select>
@@ -43,23 +48,21 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="ano">Ano:</label>
+                                <label class="espacamento" for="ano">Ano:</label>
                                 <input type="text" name="ano" id="ano" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="estudio">Estúdio:</label>
-                                <select name="estudio" id="estudio" class="form-control">
-                                    <option value="">Selecione um estúdio</option>
-                                </select>
+                                <label class="espacamento" for="estudio">Estúdio:</label>
+                                <input type="text" name="estudio" id="estudio" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="pais">País:</label>
+                                <label class="espacamento" for="pais">País:</label>
                                 <select name="pais" id="pais" class="form-control">
                                     <option value="">Selecione um país</option>
                                 </select>
@@ -67,12 +70,20 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="diretor">Diretor:</label>
+                                <label class="espacamento" for="diretor">Diretor:</label>
                                 <input type="text" name="diretor" id="diretor" class="form-control">
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Cadastrar" class="btn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="espacamento" for="sinopse">Sinopse:</label>
+                                <textarea name="sinopse" id="sinopse" row="3" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="Cadastrar" class="btn btn-custom">
                 </form>
             </div>
         </div>
