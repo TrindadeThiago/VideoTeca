@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form action="" method="post" id="cadastro">
+                <form action="src/php/valida.php" method="post" id="cadastro">
                     <div class="title">
                         <h3 class="espacamento title-form">Cadastre um filme</h3>
                     </div>
@@ -40,8 +40,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="espacamento" for="titulo">Duração:</label>
-                                <input type="time" name="titulo" id="titulo" class="form-control">
+                                <label class="espacamento" for="duracao">Duração:</label>
+                                <input type="time" name="duracao" id="duracao" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -49,6 +49,7 @@
                                 <label class="espacamento" for="genero">Gênero:</label>
                                 <select name="genero" id="genero" class="form-control">
                                     <option value="">Selecione um gênero</option>
+                                    <option value="acao">Ação</option>
                                 </select>
                             </div>
                         </div>
@@ -57,7 +58,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="espacamento" for="ano">Ano:</label>
-                                <input type="text" name="ano" id="ano" class="form-control">
+                                <input type="number" name="ano" id="ano" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -73,6 +74,7 @@
                                 <label class="espacamento" for="pais">País:</label>
                                 <select name="pais" id="pais" class="form-control">
                                     <option value="">Selecione um país</option>
+                                    <option value="brasil">Brásil</option>
                                 </select>
                             </div>
                         </div>
