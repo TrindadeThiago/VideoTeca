@@ -1,3 +1,12 @@
+<?php
+  require("src/php/conexao.php");
+  $query = "SELECT * FROM genero";
+  $exe = mysqli_query($con, $query);
+
+  $query_pais = "SELECT * FROM pais";
+  $exe_pais = mysqli_query($con, $query_pais);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +58,9 @@
                                 <label class="espacamento" for="genero">Gênero:</label>
                                 <select name="genero" id="genero" class="form-control">
                                     <option value="">Selecione um gênero</option>
-                                    <option value="acao">Ação</option>
+                                    <?php while($res = mysqli_fetch_assoc($exe)){ ?>
+                                      <option value="<?php echo $res['id_genero']; ?>"><?php echo $res['genero']; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
@@ -74,7 +85,9 @@
                                 <label class="espacamento" for="pais">País:</label>
                                 <select name="pais" id="pais" class="form-control">
                                     <option value="">Selecione um país</option>
-                                    <option value="brasil">Brásil</option>
+                                    <?php while($res_pais = mysqli_fetch_assoc($exe_pais)){ ?>
+                                      <option value="<?php echo $res_pais['id_pais']; ?>"><?php echo $res_pais['pais']; ?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
@@ -103,6 +116,6 @@
     <!--BOOTSTRAP JS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
