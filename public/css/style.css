@@ -4,7 +4,7 @@
     font-family: 'Righteous', cursive;
 }
 
-html {
+html body {
     background: #30336b;
 }
 
@@ -96,5 +96,16 @@ html {
 
 .btn-custom {
     background: #30336b;
+    color: #fff;
+}
+
+.title-catalogo {
+    margin-top: 8%;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+table {
     color: #fff;
 }

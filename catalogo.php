@@ -1,3 +1,11 @@
+<?php
+
+    require("src/php/conexao.php");
+    $query = "SELECT * FROM filme";
+    $exe = mysqli_query($con, $query);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +27,39 @@
     <?php
         require_once('src/template/menu.html');
     ?>
+
+    <!--CORPO-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="espacamento title-catalogo">Nosso Catálogo</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="espacamento table table-bordered table-hover">
+                    <tr>
+                        <th>Título</th>
+                        <th>Gênero</th>
+                        <th>Duração</th>
+                        <th>Ano</th>
+                        <th>Estúdio</th>
+                        <th>Páis</th>
+                        <th>Diretor</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <!--BOOTSTRAP JS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
