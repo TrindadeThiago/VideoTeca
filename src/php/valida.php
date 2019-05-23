@@ -37,7 +37,10 @@
 
                 if ($exe_filmes) {
 
-                  echo "Cadastrado";
+                  echo "<script>window.alert('Filme cadastrado com sucesso!')</script>";
+                  echo "<script language='javascript'>";
+                  echo "location.href='../../cadastro.php'";
+                  echo "</script>";
 
                 }else{
 

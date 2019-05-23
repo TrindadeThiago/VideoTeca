@@ -37,7 +37,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <table class="espacamento table table-bordered table-hover">
+                <table class="espacamento table table-bordered table-hover table-responsive-md">
                     <tr>
                         <th>Título</th>
                         <th>Gênero</th>
@@ -47,15 +47,19 @@
                         <th>Páis</th>
                         <th>Diretor</th>
                     </tr>
+                    <?php
+                        while($res = mysqli_fetch_assoc($exe)){
+                    ?>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?php echo $res['titulo']; ?></td>
+                        <td><?php echo $res['id_genero']; ?></td>
+                        <td><?php echo $res['duracao']; ?></td>
+                        <td><?php echo $res['ano']; ?></td>
+                        <td><?php echo $res['id_estudio']; ?></td>
+                        <td><?php echo $res['id_pais']; ?></td>
+                        <td><?php echo $res['id_diretor']; ?></td>
                     </tr>
+                    <?php } ?>
                 </table>
             </div>
         </div>

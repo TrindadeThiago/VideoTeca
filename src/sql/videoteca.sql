@@ -294,7 +294,15 @@ INSERT INTO `pais` (`id_pais`, `pais`, `paisName`) VALUES
 
 select filme.titulo, diretor.diretor
 from filme 
-inner join diretor on filme.id_diretor = diretor.id_diretor; 
+inner join diretor on filme.id_diretor = diretor.id_diretor;
+
+select * from filme;
+
+select * from genero;
+
+select * from pais;
 
 select * from estudio;
+
+select * from diretor;
 
