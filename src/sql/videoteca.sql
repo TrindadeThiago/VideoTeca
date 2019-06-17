@@ -5,13 +5,9 @@ use videoteca;
 create table filme(
 	id_filme int primary key auto_increment,
     id_genero int,
-    foreign key (id_genero) references genero (id_genero),
     id_pais int,
-    foreign key (id_pais) references pais (id_pais),
     id_diretor int,
-    foreign key (id_diretor) references diretor (id_diretor),
     id_estudio int,
-    foreign key (id_estudio) references estudio (id_estudio),
     titulo varchar(100) not null,
     duracao time not null,
     ano year not null,
@@ -292,9 +288,9 @@ INSERT INTO `pais` (`id_pais`, `pais`, `paisName`) VALUES
 (251, 'ZÂMBIA', 'ZAMBIA'),
 (252, 'ZIMBABUÉ', 'ZIMBABWE');
 
-select filme.titulo, diretor.diretor
-from filme 
-inner join diretor on filme.id_diretor = diretor.id_diretor;
+SELECT filme.titulo, genero.genero, filme.duracao, filme.ano, filme.sinopse
+	FROM filme 
+	INNER JOIN genero ON filme.id_genero = genero.id_genero;
 
 select * from filme;
 
@@ -302,7 +298,13 @@ select * from genero;
 
 select * from pais;
 
+select * from diretor;
+
 select * from estudio;
 
-select * from diretor;
+delete from filme where id_filme=2;
+
+delete from diretor where id_diretor=2;
+
+delete from estudio where id_estudio=2;
 

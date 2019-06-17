@@ -1,11 +1,10 @@
 <?php
 
     require("src/php/conexao.php");
-    $query = "SELECT filme.titulo, genero.genero, filme.duracao, filme.ano, estudio.estudio, pais.pais, diretor.diretor
+    $query = "SELECT filme.titulo, genero.genero, filme.duracao, filme.ano, estudio.estudio, diretor.diretor, filme.sinopse
                 FROM filme 
                 INNER JOIN genero ON filme.id_genero = genero.id_genero
                 INNER JOIN estudio ON filme.id_estudio = estudio.id_estudio
-                INNER JOIN pais ON filme.id_pais = pais.id_pais
                 INNER JOIN diretor ON filme.id_diretor = diretor.id_diretor "  ;
     $exe = mysqli_query($con, $query);
 
@@ -49,8 +48,9 @@
                         <th>Duração</th>
                         <th>Ano</th>
                         <th>Estúdio</th>
-                        <th>Páis</th>
                         <th>Diretor</th>
+                        <th>Sinopse</th>
+                        <th>Ações</th>
                     </tr>
                     <?php
                         while($res = mysqli_fetch_assoc($exe)){
@@ -61,8 +61,12 @@
                         <td><?php echo $res['duracao']; ?></td>
                         <td><?php echo $res['ano']; ?></td>
                         <td><?php echo $res['estudio']; ?></td>
-                        <td><?php echo $res['pais']; ?></td>
                         <td><?php echo $res['diretor']; ?></td>
+                        <td><?php echo $res['sinopse']; ?></td>
+                        <td>
+                            <button class="btn btn-danger">Apagar</button>
+                            <button class="btn btn-warning">Atualizar</button>
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>

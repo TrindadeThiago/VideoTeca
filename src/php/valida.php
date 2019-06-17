@@ -18,10 +18,10 @@
                 include("conexao.php");
                 $query_diretor = "INSERT INTO diretor(diretor) VALUES ('$diretor')";
 
-                $pegarId = "SELECT id_diretor FROM diretor WHERE diretor = '$diretor'";
-                $exe_diretor = mysqli_query($con, $pegarId);
-                $pegarId = mysqli_fetch_assoc($exe_diretor);
-                $pegarId = $pegarId['id_diretor'];
+                $pegarDiretor = "SELECT id_diretor FROM diretor WHERE diretor = '$diretor'";
+                $exe_diretor = mysqli_query($con, $pegarDiretor);
+                $pegarDiretor = mysqli_fetch_assoc($exe_diretor);
+                $pegarDiretor = $pegarDiretor['id_diretor'];
 
                 $pegarEstudio = "SELECT id_estudio FROM estudio WHERE estudio = '$estudio'";
                 $exe_pegarEstudio = mysqli_query($con, $pegarEstudio);
@@ -32,7 +32,7 @@
                 $exe_diretor = mysqli_query($con, $query_diretor);
                 $exe_estudio = mysqli_query($con, $query_estudio);
 
-                $query_filmes = "INSERT INTO filme(titulo, ano, duracao, sinopse, id_diretor, id_pais, id_genero, id_estudio) VALUES ('$titulo','$ano','$duracao','$sinopse','$pegarId', '$pais', '$genero', '$pegarEstudio')";
+                $query_filmes = "INSERT INTO filme(id_genero, id_pais, id_diretor, id_estudio, titulo, duracao, ano, sinopse) VALUES ('$id_genero', '$id_pais', '$pegarDiretor', '$pegarEstudio', '$titulo', '$duracao', '$ano', '$sinopse')";
                 $exe_filmes = mysqli_query($con, $query_filmes);
 
                 if ($exe_filmes) {
