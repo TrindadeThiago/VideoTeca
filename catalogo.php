@@ -1,7 +1,7 @@
 <?php
 
     require("src/php/conexao.php");
-    $query = "SELECT filme.titulo, genero.genero, filme.duracao, filme.ano, estudio.estudio, diretor.diretor, filme.sinopse
+    $query = "SELECT filme.id_filme, filme.titulo, genero.genero, filme.duracao, filme.ano, estudio.estudio, diretor.diretor, filme.sinopse
                 FROM filme 
                 INNER JOIN genero ON filme.id_genero = genero.id_genero
                 INNER JOIN estudio ON filme.id_estudio = estudio.id_estudio
@@ -41,35 +41,37 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <table class="espacamento table table-bordered table-hover table-responsive-md">
-                    <tr>
-                        <th>Título</th>
-                        <th>Gênero</th>
-                        <th>Duração</th>
-                        <th>Ano</th>
-                        <th>Estúdio</th>
-                        <th>Diretor</th>
-                        <th>Sinopse</th>
-                        <th>Ações</th>
-                    </tr>
-                    <?php
-                        while($res = mysqli_fetch_assoc($exe)){
-                    ?>
-                    <tr>
-                        <td><?php echo $res['titulo']; ?></td>
-                        <td><?php echo $res['genero']; ?></td>
-                        <td><?php echo $res['duracao']; ?></td>
-                        <td><?php echo $res['ano']; ?></td>
-                        <td><?php echo $res['estudio']; ?></td>
-                        <td><?php echo $res['diretor']; ?></td>
-                        <td><?php echo $res['sinopse']; ?></td>
-                        <td>
-                            <button class="btn btn-danger">Apagar</button>
-                            <button class="btn btn-warning">Atualizar</button>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                </table>
+                <form action="" method="post">
+                    <table class="espacamento table table-bordered table-hover table-responsive-md">
+                        <tr>
+                            <th>Título</th>
+                            <th>Gênero</th>
+                            <th>Duração</th>
+                            <th>Ano</th>
+                            <th>Estúdio</th>
+                            <th>Diretor</th>
+                            <th>Sinopse</th>
+                            <th>Ações</th>
+                        </tr>
+                        <?php
+                            while($res = mysqli_fetch_assoc($exe)){
+                        ?>
+                        <tr>
+                            <td><?php echo $res['titulo']; ?></td>
+                            <td><?php echo $res['genero']; ?></td>
+                            <td><?php echo $res['duracao']; ?></td>
+                            <td><?php echo $res['ano']; ?></td>
+                            <td><?php echo $res['estudio']; ?></td>
+                            <td><?php echo $res['diretor']; ?></td>
+                            <td><?php echo $res['sinopse']; ?></td>
+                            <td>
+                                <button name="apagar" class="btn btn-danger">Apagar</button>
+                            </td>
+                            <?php echo"<td><input name='id' type='hidden' value='$res[id_filme]'/></td>";?>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </form>
             </div>
         </div>
     </div>
@@ -80,3 +82,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php
+    if(isset($_POST['apagar'])) {
+        $id = $_POST['id'];
+        $delete = "DELETE FROM filme WHERE id_filme=$id";
+        $exeDelete= mysqli_query($con, $delete);
+    }
+?>

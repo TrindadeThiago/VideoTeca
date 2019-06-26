@@ -32,7 +32,7 @@
                 $exe_diretor = mysqli_query($con, $query_diretor);
                 $exe_estudio = mysqli_query($con, $query_estudio);
 
-                $query_filmes = "INSERT INTO filme(id_genero, id_pais, id_diretor, id_estudio, titulo, duracao, ano, sinopse) VALUES ('$id_genero', '$id_pais', '$pegarDiretor', '$pegarEstudio', '$titulo', '$duracao', '$ano', '$sinopse')";
+                $query_filmes = "INSERT INTO filme(id_genero, id_pais, id_diretor, id_estudio, titulo, duracao, ano, sinopse) VALUES ('$genero', '$pais', '$pegarDiretor', '$pegarEstudio', '$titulo', '$duracao', '$ano', '$sinopse')";
                 $exe_filmes = mysqli_query($con, $query_filmes);
 
                 if ($exe_filmes) {

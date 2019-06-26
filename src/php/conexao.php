@@ -1,5 +1,5 @@
 <?php
 
-  $con = mysqli_connect("localhost:3306","root","","videoteca") or die ("Erro ao conectar.");
+  $con = mysqli_connect("localhost:3306","root","1234","videoteca") or die ("Erro ao conectar.");
 
 ?>
